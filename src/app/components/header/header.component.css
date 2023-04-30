@@ -1,0 +1,32 @@
+.topnav {
+  background-color: beige;
+  overflow: hidden;
+}
+
+.topnav a {
+  float: left;
+  color: blueviolet;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.topnav a:hover {
+  background-color: bisque;
+  color: black;
+}
+
+.topnav a:active {
+  background-color: burlywood;
+  color: blue;
+}
+
+.topnav input[type="text"] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 20px;
+}
