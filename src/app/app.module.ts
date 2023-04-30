@@ -11,6 +11,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ProductService } from './services/product.service';
 import { FooterComponent } from './components/footer/footer.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import { CategoriesComponent } from './components/categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SearchbarComponent } from './components/searchbar/searchbar.component';
     ProductListComponent,
     HeaderComponent,
     FooterComponent,
-    SearchbarComponent
+    SearchbarComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,
