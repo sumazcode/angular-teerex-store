@@ -12,6 +12,7 @@ import { ProductService } from './services/product.service';
 import { FooterComponent } from './components/footer/footer.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { CategoriesComponent } from './components/categories/categories.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,12 +21,13 @@ import { CategoriesComponent } from './components/categories/categories.componen
     HeaderComponent,
     FooterComponent,
     SearchbarComponent,
-    CategoriesComponent
+    CategoriesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]

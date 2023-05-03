@@ -13,10 +13,8 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
 
-  getProductList(): Observable<Product[]> {
+  getProductList(categoryId: number): Observable<Product[]> {
     return this.http.get<Product[]>(this.baseUrl)
-                    .pipe(
-                      map(response => response)
-                    );
+                    .pipe(map(response => response));
   }
 }

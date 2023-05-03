@@ -1,10 +1,32 @@
-<div class="dropdown">
-  <a href="javascript:void(0)" class="dropbtn">Categories</a>
-  <div class="dropdown-content">
+<div class="sidenav-container">
+  <div class="sidenav">
     <a href="#">Gender</a>
+    <br>
+    <select #gender [(ngModel)]="selectedGender" (change)="onSelectGender()">
+      <option default>Select</option>
+      <option>Female</option>
+      <option>Male</option>
+      <option>Unisex</option>
+    </select>
+    <br>
     <a href="#">Colour</a>
+    <br>
+    <select #colour [(ngModel)]="selectedColour" (change)="onSelectColour()">
+      <option default>Select</option>
+      <option>Red</option>
+      <option>Blue</option>
+      <option>Green</option>
+    </select>
+    <br>
     <a href="#">Type</a>
-    <a href="#">Price range</a>
+    <br>
+    <select #type [(ngModel)]="selectedType" (change)="onSelectType()">
+      <option default>Select</option>
+      <option>Casual</option>
+      <option>Formals</option>
+    </select>
   </div>
 </div>
+
+
 
