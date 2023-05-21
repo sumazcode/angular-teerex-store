@@ -13,6 +13,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { FormsModule } from '@angular/forms';
+import { CartStatusComponent } from './components/cart-status/cart-status.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     SearchbarComponent,
     CategoriesComponent,
+    CartStatusComponent,
   ],
   imports: [
     BrowserModule,

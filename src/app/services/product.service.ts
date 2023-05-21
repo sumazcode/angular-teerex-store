@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 
 import { Product } from '../common/product';
+import { GlobalConstants } from '../common/constants';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +14,15 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
 
-  getProductList(categoryId: number): Observable<Product[]> {
+  getProductList(): Observable<Product[]> {
     return this.http.get<Product[]>(this.baseUrl)
                     .pipe(map(response => response));
   }
+
+  getProductListByCategory(category: string, selectedValue: string): Observable<Product[]> {
+    return this.http.get<Product[]>(this.baseUrl)
+                    .pipe(map(response => response));
+
+  }
 }
+

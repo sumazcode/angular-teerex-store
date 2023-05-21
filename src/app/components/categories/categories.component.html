@@ -13,9 +13,9 @@
     <br>
     <select #colour [(ngModel)]="selectedColour" (change)="onSelectColour()">
       <option default>Select</option>
-      <option>Red</option>
-      <option>Blue</option>
-      <option>Green</option>
+      <option *ngFor="let temp of availableColours" value="{{temp}}">
+        {{ temp }}
+      </option>
     </select>
     <br>
     <a href="#">Type</a>
@@ -25,6 +25,10 @@
       <option>Casual</option>
       <option>Formals</option>
     </select>
+    <br>
+    <a href="#">Price</a>
+    <br>
+    <input type="range" id="points" name="points" min="100" max="10000">
   </div>
 </div>
 

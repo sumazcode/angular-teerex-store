@@ -11,7 +11,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ProductListComponent implements OnInit {
   products: Product[] = [];
-  currentCategoryId: number = 1;
+  currentCategoryId: string = "All";
 
   constructor(private productService: ProductService,
               private route: ActivatedRoute ) { }
@@ -24,19 +24,22 @@ export class ProductListComponent implements OnInit {
 
   listProducts() {
     // check if id parameter is available in route
-    const hasCategoryId: boolean = this.route.snapshot.paramMap.has('id');
+    const hasCategoryId: boolean = this.route.snapshot.paramMap.has('category');
+    let categoryValue: string = "All";
 
     if(hasCategoryId) {
-      // convert string to number
-      // ! is the non null assertion character to indicate the oject is not null
-      this.currentCategoryId = +this.route.snapshot.paramMap.get('id')!;
+      this.currentCategoryId = this.route.snapshot.paramMap.get('category')!;
+      categoryValue = this.route.snapshot.paramMap.get('value')!;
+      console.log("Inside ProductList, category and value are = ", this.currentCategoryId,
+                                                        categoryValue);
+      this.productService.getProductListByCategory(this.currentCategoryId, categoryValue)
+                          .subscribe(data => {
+        this.products = data;
+      });
     } else {
-      this.currentCategoryId = 1;
+      this.productService.getProductList().subscribe(data => {
+        this.products = data;
+      });
     }
-
-    this.productService.getProductList(this.currentCategoryId).subscribe(data => {
-      this.products = data;
-    });
   }
-
 }

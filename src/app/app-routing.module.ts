@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProductListComponent } from './components/product-list/product-list.component';
 
 const routes: Routes = [
-  {path: 'categories/:id', component: ProductListComponent},
+  {path: 'categories/:category/:value', component: ProductListComponent},
   {path: 'categories', component: ProductListComponent},
   {path: 'products', component: ProductListComponent},
   {path: 'search/:keyword', component: ProductListComponent},
